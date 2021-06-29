@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_blue"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/review_detail_voting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0/5"
+                    android:textSize="30sp"
+                    android:textColor="@color/white"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/review_detail_voting"
+                    android:src="@drawable/ic_baseline_star_rate_24"
+                    android:layout_marginTop="8dp"/>
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/review_detail_nameAndTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="by xxx on xxxxxxx"
+                android:textSize="25sp"
+                android:textColor="@color/blue"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:id="@+id/review_detail_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="contentcontentcontentcontentcontentcontentcontentcontent"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

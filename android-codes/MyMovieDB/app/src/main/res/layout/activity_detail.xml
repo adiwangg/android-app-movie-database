@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_blue"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/loading_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/pBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/blue"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pBar"
+            android:layout_marginLeft="12dp"
+            android:text="Loading..."
+            android:textColor="@color/white"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                android:id="@+id/youtube_player_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:autoPlay="false"
+                app:enableAutomaticInitialization="true"
+                app:showFullScreenButton="true" />
+
+            <ImageView
+                android:id="@+id/youtube_image"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/detail_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blue"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="Title"
+                android:textColor="@color/white"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/deatil_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <!--    overview  -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Overview"
+                    android:textColor="@color/blue"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <com.borjabravo.readmoretextview.ReadMoreTextView
+                    android:id="@+id/detail_overview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" "
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:trimLength="170"
+                    app:trimMode="trimModeLength"
+                    app:colorClickableText="@color/gray"/>
+
+                <!--    genres  -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Genres"
+                    android:textColor="@color/blue"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/detail_genres"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Two "
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <!--   year   -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Year"
+                    android:textColor="@color/blue"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/detail_year"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2010"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <!--   Share   -->
+                <RelativeLayout
+                    android:id="@+id/share_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/add_remove_btn_linearlayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/detail_add_to_watchlist_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_baseline_add_circle_outline_32" />
+
+                        <ImageView
+                            android:id="@+id/detail_remove_from_watchlist_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_baseline_remove_circle_outline_32" />
+                    </LinearLayout>
+
+
+                    <ImageView
+                        android:id="@+id/detail_facebook_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_toRightOf="@id/add_remove_btn_linearlayout"
+                        android:src="@drawable/ic_baseline_facebook_24" />
+
+                    <ImageView
+                        android:id="@+id/detail_twitter_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_toRightOf="@id/detail_facebook_btn"
+                        android:src="@drawable/ic_twitter_logo_dialog" />
+
+                </RelativeLayout>
+
+                <!--   Cast   -->
+                <RelativeLayout
+                    android:id="@+id/detail_cast_block"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/detail_cast_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cast"
+                        android:textColor="@color/blue"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_grid_cast"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/detail_cast_title" />
+                </RelativeLayout>
+
+                <!--   Reviews   -->
+                <RelativeLayout
+                    android:id="@+id/detail_reviews_block"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/detail_reviews_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reviews"
+                        android:textColor="@color/blue"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_list_reviews"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/detail_reviews_title" />
+                </RelativeLayout>
+
+                <!--   Recommendation   -->
+                <RelativeLayout
+                    android:id="@+id/detail_recommendation_block"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/detail_recommendation_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recommended Picks"
+                        android:textColor="@color/blue"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_detail_recommendation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/detail_recommendation_title" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
